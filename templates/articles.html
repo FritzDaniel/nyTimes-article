@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div style="text-align: center">
+    <h2>Most Viewed Articles</h2>
+</div>
+<div class="grid-container">
+    {% for value in data.results %}
+        <div class="grid-item">
+            <a href="{{url_for('articleDetail', article_index=loop.index )}}">
+                <div class="card">
+                    {% if value.media|length > 0 %}
+                       <img src="{{ value.media[0]['media-metadata'][2].url }}" alt="Avatar" style="width:100%">
+                    {% endif %}
+
+                    <div class="container">
+                        <h4><b>{{ value.title }}</b></h4>
+                        <p>{{ value.byline }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

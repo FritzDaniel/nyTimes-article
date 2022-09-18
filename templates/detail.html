@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div style="text-align: center">
+    <h2>Detail Article</h2>
+</div>
+<div style="margin-bottom: 25px;">
+    <a href="{{ url_for('home') }}" style="padding: 12px; border: 1px solid black; background-color: #f2f2f2;">< Back</a>
+</div>
+<div class="card" style="padding: 20px">
+    <div class="container">
+        {% if data.img_url !="" %}
+            <img src="{{ data.img_url }}" alt="Avatar" style="width:350px; height: 350px;">
+        {% endif %}
+        <h3>{{ data.title }}</h3>
+        <p>{{ data.published_date }} | {{ data.byline }}</p>
+        <p>{{ data.abstract }}</p>
+        <a href="{{ data.url }}" target="_blank">Go to article</a>
+    </div>
+</div>
+
+{% endblock %}
