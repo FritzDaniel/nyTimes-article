@@ -16,3 +16,6 @@ How to run this project at your personal PC/laptop
 6. Open web browser and enter the following url http://127.0.0.1:5000
 
 Thank you..
+
+the Demo app url: 
+https://test-nytimes-article.herokuapp.com/
